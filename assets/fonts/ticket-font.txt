@@ -1,0 +1,5 @@
+Ticket Hangul: Noto Sans KR, weight 700 (static), SIL Open Font License 1.1.
+Source: https://github.com/google/fonts/tree/main/ofl/notosanskr
+License: notosanskr-OFL.txt in this directory.
+Locally subset to all 11,172 modern Hangul syllables, Hangul Jamo, basic Latin and punctuation.
+Served from this site's own origin only after Create is pressed. User names are never sent to a font API.

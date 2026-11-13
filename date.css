@@ -1,0 +1,53 @@
+/* A compact native-scroll date chapter: wire platter → real day tiles → last-piece settle. */
+.date-section{position:relative;--date-p:1;--wire-turn:0deg;--wire-lift:0px;--date-lift:0px;--wire-dash:0;--date-glow:.3}
+.date-stage{position:relative;isolation:isolate;margin:14px -8px 3px;padding:26px 8px 40px;perspective:700px;overflow:hidden}
+.date-stage:before{content:'';position:absolute;inset:30% 0 0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 65%,#90303960,transparent 66%);opacity:var(--date-glow)}
+.date-wire{position:absolute;left:0;right:0;bottom:0;width:100%;height:160px;z-index:-1;overflow:visible;fill:none;stroke:#903039;stroke-width:.85;transform:translate3d(0,var(--wire-lift),0) rotate(var(--wire-turn));transform-origin:50% 70%;pointer-events:none}
+.wire-guides{stroke:#663238;stroke-dasharray:2 6;opacity:.75}.wire-disc{stroke:#a64851;opacity:.82}.platter-edge{stroke:#6a3238}.platter-body{fill:#141413ed;stroke:#b45a62;stroke-width:1.2}.disc-label{fill:#90303950;stroke:#b45a62}.wire-arm{stroke:#c8afa6;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.wire-line{stroke:#d58a90;stroke-width:1.5;stroke-dasharray:100;stroke-dashoffset:var(--wire-dash);opacity:.55}
+.date-lockup{position:relative;z-index:1;margin:0;transform:translate3d(0,var(--date-lift),0);transform-origin:center bottom}.date-lockup h2{font-size:clamp(88px,26vw,111px);letter-spacing:-.025em;line-height:1.05;text-shadow:0 6px 16px #141413}.date-aside{padding-top:2px;gap:1px}.date-aside strong{font-size:30px}.date-caption{margin-top:7px;padding-bottom:17px}.date-verified{font:8px/1 monospace;letter-spacing:.08em;color:#b9a9a3}
+.countdown-stage{position:relative;isolation:isolate;overflow:hidden;background:#1c1516;border:1px solid #633038;padding:13px 15px 12px;--snap-opacity:0}
+.countdown-kicker,.countdown-baseline{display:flex;align-items:center;justify-content:space-between;gap:8px;font:8px/1.4 monospace;letter-spacing:.08em;color:#c9aaa6}.countdown-kicker span:last-child{color:#9f8c87;font-size:7px}.countdown-assembly{position:relative;display:flex;align-items:center;justify-content:center;min-height:111px;padding:12px 0 11px}.countdown-assembly>.countdown{border:0;padding:0;font:400 82px/.95 'Anton',Impact,sans-serif;letter-spacing:.01em;color:#f0e7d9}
+.countdown-pieces{display:none;justify-content:center;align-items:center;gap:4px;width:100%;font:400 82px/.98 'Anton',Impact,sans-serif;letter-spacing:0;white-space:nowrap}.date-ready .countdown-pieces{display:flex}.date-ready #countdown{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.day-piece{position:relative;display:inline-grid;place-items:center;min-width:.58em;height:1.02em}.day-piece:last-child:after{content:'';position:absolute;inset:-6px -3px -5px;border:1px solid #b45a62;opacity:var(--snap-opacity);pointer-events:none}.day-piece-ghost,.day-piece-ink{grid-area:1/1}.day-piece-ghost{color:transparent;-webkit-text-stroke:1px #8a6765;opacity:.95}.day-piece-ink{color:#f0e7d9;transform:translate3d(var(--piece-x,0px),var(--piece-y,0px),0) rotate(var(--piece-r,0deg));opacity:var(--piece-opacity,1);transform-origin:center bottom;will-change:transform}.day-piece-prefix .day-piece-ink{color:#c56870}.countdown-pieces.is-word{font-size:41px;gap:1px}.countdown-pieces.is-word .day-piece{min-width:.47em}.countdown-pieces.is-word .day-piece:last-child:after{inset:-5px -1px}
+.countdown-baseline{font-size:6px;letter-spacing:.12em;color:#bba39c;border-top:1px solid #5d3034;padding-top:12px}.countdown-baseline i{height:1px;flex:1;max-width:65px;background:#903039;transform:scaleX(var(--date-p));transform-origin:left}.countdown-stage:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 25%,#d58a9012 49%,transparent 70%);transform:translateX(-130%);z-index:2}.date-complete .countdown-stage:after{animation:date-confirm 1.4s cubic-bezier(.16,1,.3,1) both}.date-complete .day-piece:last-child:after{animation:last-piece-confirm .85s ease-out both}.date-section .countdown-note{margin:12px 0 23px;line-height:1.7}.date-ready:not(.motion-still) .date-section.reveal-item{opacity:1;transform:none;transition:none}.date-ready .date-section .venue-line{margin-top:0}
+@keyframes date-confirm{to{transform:translateX(130%)}}@keyframes last-piece-confirm{0%{opacity:.8;transform:scale(1.1)}100%{opacity:0;transform:scale(1)}}
+.motion-still .date-wire,.motion-still .date-lockup,.motion-still .day-piece-ink{transform:none!important;opacity:1!important;will-change:auto}.motion-still .wire-line{stroke-dashoffset:0!important}.motion-still .countdown-stage:after,.motion-still .day-piece:after{display:none!important}.motion-paused .countdown-stage:after,.motion-paused .day-piece:after{animation-play-state:paused!important}.date-section:not(.date-active) .countdown-stage:after,.date-section:not(.date-active) .day-piece:after{animation-play-state:paused!important}
+@media(max-width:350px){.date-stage{padding-bottom:35px}.date-lockup h2{font-size:93px}.date-aside strong{font-size:27px}.date-wire{height:145px}.countdown-stage{padding-left:12px;padding-right:12px}.countdown-pieces{font-size:76px}.countdown-pieces.is-word{font-size:35px}.countdown-kicker{font-size:7px}.countdown-assembly{min-height:104px}}
+@media(prefers-reduced-motion:reduce){.date-wire,.date-lockup,.day-piece-ink{transform:none!important;opacity:1!important;will-change:auto!important}.wire-line{stroke-dashoffset:0!important}.countdown-stage:after,.day-piece:after{display:none!important}.countdown-baseline i{transform:none!important}}
+@media print{.date-wire,.countdown-stage:after,.day-piece:after{display:none!important}.date-lockup,.day-piece-ink{transform:none!important;opacity:1!important}.date-stage{padding-bottom:10px}}
+
+/* Own LCD treatment: the real KST value stays fixed; native scroll reveals ink and backlight. */
+.lcd-stage{padding:13px 12px 11px;background:#1a1717;border:1px solid #4d3838;box-shadow:inset 0 1px #ffffff0a,0 5px 0 #0d0d0c;border-radius:3px}
+.lcd-stage .countdown-kicker{padding:0 2px 10px;color:#d0bdb4}
+.lcd-window{position:relative;isolation:isolate;overflow:hidden;padding:12px 16px 13px;border:4px solid #101210;border-radius:5px;background:#9aa58b;box-shadow:inset 0 2px 8px #1b211e59,0 1px #ffffff13;color:#20261c}
+.lcd-window:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(135deg,#dac792,#c0b088);opacity:var(--lcd-light,1);box-shadow:inset 0 0 24px #f0d9a338}
+.lcd-topline,.lcd-bottomline{display:flex;justify-content:space-between;align-items:center;gap:10px;font:8px/1.4 monospace;letter-spacing:.1em;color:#323b2b}
+.lcd-topline{border-bottom:1px solid #26301a24;padding-bottom:6px}.lcd-topline span:last-child{font-weight:bold;font-size:10px;letter-spacing:0}
+.lcd-window .countdown-assembly{min-height:135px;padding:16px 0 12px;overflow:hidden}
+.lcd-window .countdown-pieces{gap:7px;font-size:75px;color:#20261c}
+.lcd-window .day-piece{height:112px;min-width:35px}
+.lcd-window .day-piece-prefix{font:400 46px/1 'Anton',Impact,sans-serif;min-width:24px;align-self:center;height:80px}
+.lcd-window .day-piece-ghost{color:#28321d29;-webkit-text-stroke:0;opacity:1}
+.lcd-window .day-piece-ink,.lcd-window .day-piece-prefix .day-piece-ink{color:#20261c;text-shadow:none}
+.lcd-digit{width:64px;flex:0 1 64px}.lcd-digit>span{display:block;width:100%;height:112px}.lcd-digit svg{display:block;width:100%;height:100%;overflow:visible}
+.lcd-cell{fill:#28321d;opacity:.065}.lcd-cell-truth{opacity:.21}.lcd-cell-on{fill:#20261c}
+.lcd-window .day-piece:last-child:after{border-color:#39402a}
+.lcd-meter{display:grid;grid-template-columns:repeat(24,1fr);gap:3px;height:9px;margin:0 0 9px}.lcd-meter i{background:#28321d12}.lcd-meter i.lit{background:#303b29}
+.lcd-bottomline{font-size:6px;letter-spacing:.07em}.lcd-stage .countdown-baseline{border:0;padding:11px 2px 0}.lcd-stage .countdown-baseline i{display:none}
+.lcd-window .countdown-pieces.is-word{font-size:31px;gap:2px}.lcd-window .countdown-pieces.is-word .day-piece{min-width:.45em;height:1.02em}.lcd-window .countdown{color:#20261c}
+.motion-still .lcd-window:before{opacity:1!important}.motion-still .lcd-meter i{background:#303b29}
+@media(max-width:350px){.lcd-window{padding:10px}.lcd-window .countdown-assembly{min-height:122px}.lcd-digit{width:53px;flex-basis:53px}.lcd-window .day-piece{height:99px}.lcd-digit>span{height:99px}.lcd-window .day-piece-prefix{height:68px;font-size:39px;min-width:20px}.lcd-window .countdown-pieces{gap:4px}.lcd-meter{gap:2px}.lcd-topline{font-size:7px}.lcd-window .countdown-pieces.is-word{font-size:26px}}
+@media(prefers-reduced-motion:reduce){.lcd-window:before{opacity:1!important}.lcd-meter i{background:#303b29}}
+
+/* A short native-scroll hold, never scrolljacking. The 3.8 s counter pauses when out of view. */
+.lcd-chapter{position:relative;min-height:calc(280px + clamp(180px,40svh,320px));padding-bottom:1px}
+.lcd-chapter>.lcd-stage{position:sticky;top:clamp(18px,12svh,100px)}
+.lcd-counting .day-piece-prefix{visibility:hidden}
+.lcd-counting .lcd-topline span:first-child{font-size:7px;letter-spacing:.01em}
+.lcd-topline span:last-child{font-size:8px}
+.lcd-counting .lcd-bottomline span:first-child{font-size:0}
+.lcd-counting .lcd-bottomline span:first-child:after{content:'VISUAL COUNT · ACTUAL DAYS ABOVE';font-size:6px}
+.lcd-window .day-piece-ink{will-change:auto}
+.motion-still .lcd-chapter{min-height:0}.motion-still .lcd-chapter>.lcd-stage{position:relative;top:0}
+@media(prefers-reduced-motion:reduce){.lcd-chapter{min-height:0}.lcd-chapter>.lcd-stage{position:relative;top:0}}
+@media print{.lcd-chapter{min-height:0}.lcd-chapter>.lcd-stage{position:relative;top:0}}

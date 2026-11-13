@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//DANWHI//Live Invitation//KO
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:danwhi-20261205@danwhi-live.vercel.app
+DTSTAMP:20261112T080605Z
+SEQUENCE:1
+DTSTART:20261205T090000Z
+SUMMARY:단휘밴드 DANWHI - Mobician 정기공연
+LOCATION:펄스 라이브홀 (서울특별시 서초구 주흥길 12\, 지
+ 하 1층)
+DESCRIPTION:오후 6시(18:00\, 한국시간) 공연 시작.\n신논현역 
+ 1번 출구에서 도보 약 5분.\n예매·입장 안내는 추후 공지
+ 됩니다.
+URL:https://danwhi-live.vercel.app/
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

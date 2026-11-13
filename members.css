@@ -1,0 +1,16 @@
+.members-section{border-top:1px solid var(--rule);padding-top:50px;padding-bottom:40px}
+.members-heading{font:400 clamp(54px,17vw,68px)/.92 Anton,Impact,"Arial Narrow",sans-serif;letter-spacing:-.01em;margin:27px 0 26px;color:var(--paper)}
+.members-heading i{display:inline-block;width:.17em;height:.17em;margin-left:.04em;background:var(--red)}
+.members{list-style:none;margin:0;padding:0;border-top:1px solid #ad3440a0}
+.member{display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:96px;padding:18px 0;border-bottom:1px solid #ad3440a0}
+.member:nth-child(even){align-items:flex-end;text-align:right}
+.member-role{font:400 44px/1 Anton,Impact,"Arial Narrow",sans-serif;letter-spacing:.005em;color:var(--paper)}
+.member-name{font:500 15px/1.4 "Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;letter-spacing:-.01em;color:#e3d6ca}
+.member-photo{display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:18px;padding:14px 0}
+.member-photo:nth-child(even){grid-template-columns:1fr 1.2fr;align-items:center}
+.member-photo:nth-child(even) .member-text{align-items:flex-end;text-align:right}
+.member-photo:nth-child(even) img{order:2}
+.member-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:#1d1414}
+.member-photo .member-text{display:flex;flex-direction:column;gap:4px}
+.member-photo:nth-child(odd) .member-text{align-items:flex-start;text-align:left}
+@media(max-width:350px){.member-role{font-size:38px}.members-heading{font-size:50px}}

@@ -1,0 +1,9 @@
+{
+  "licenses": "SIL Open Font License 1.1, included separately for each source",
+  "subset": "Only page text plus basic Latin, WOFF2. Noto Sans KR weight range 400\u2013700. Re-run build-fonts.py after changing text.",
+  "fonts": {
+    "Anton": "https://github.com/google/fonts/tree/main/ofl/anton",
+    "Black Han Sans": "https://github.com/google/fonts/tree/main/ofl/blackhansans",
+    "Noto Sans KR": "https://github.com/google/fonts/tree/main/ofl/notosanskr"
+  }
+}

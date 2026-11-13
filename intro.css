@@ -1,0 +1,33 @@
+/* DANWHI manifesto — one torn concert print, three clear meanings. */
+@font-face{font-family:'Intro Black';src:url('/assets/fonts/intro-black.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Intro Noto';src:url('/assets/fonts/intro-noto.woff2') format('woff2');font-weight:400;font-display:swap}
+.band-intro{position:relative;isolation:isolate;overflow:clip;background:#121111;color:#eee7df;padding:52px 20px 36px}
+.intro-eyebrow{display:flex;justify-content:space-between;gap:8px;font:8px/1.6 monospace;letter-spacing:.06em;color:#bd9c9e;margin-bottom:23px}
+#band-intro-heading{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:0 0 25px}
+#band-intro-heading>span:first-child{font:400 clamp(39px,11vw,50px)/1 'Anton',Impact,sans-serif;letter-spacing:-.025em}
+#band-intro-heading>span:last-child{font:400 12px/1.7 'Intro Noto',sans-serif;letter-spacing:-.025em;color:#cfc1bf;text-align:right}
+.intro-paper-stage{position:relative;aspect-ratio:360/445;margin:0 -4px;isolation:isolate;container-type:inline-size}
+.intro-binding{position:absolute;top:0;left:0;right:0;height:23px;background:#070707;z-index:4;display:flex;justify-content:space-between;align-items:center;padding:0 13px;border-top:1px solid #756060;border-bottom:1px solid #000;color:#d1b1b1;font:6px/1 monospace;letter-spacing:.1em;box-shadow:0 4px 6px #0007}
+.intro-binding i{display:block;width:5px;height:5px;border-radius:50%;background:#978480;box-shadow:inset 0 1px 1px #eee5,0 1px 1px #000}
+.intro-revealed-print,.intro-paper-fallback{position:absolute;inset:18px 6px 18px;box-sizing:border-box;padding:22px 23px;background:#903039;box-shadow:0 2px 0 #4c2228,0 4px 0 #a05058,0 6px 0 #54252b,0 13px 20px #0008;clip-path:polygon(0 0,100% 0,100% 98.6%,97% 99%,94% 98.4%,90% 99.3%,86% 99%,81% 99.7%,77% 99%,73% 99.5%,69% 99%,65% 99.7%,61% 99%,57% 99.3%,53% 99%,49% 99.7%,45% 99%,41% 99.6%,37% 99%,33% 99.6%,29% 99%,25% 99.5%,21% 99%,17% 99.4%,13% 99%,9% 99.5%,5% 99%,0 99.6%)}
+.intro-edition{font:7px/1.5 monospace;letter-spacing:.12em;color:#241619;display:block;border-bottom:1px solid #30191d;padding:2px 0 9px;margin-bottom:10px}
+.intro-revealed-print>strong{display:block;font:400 21cqw/.98 'Intro Black',sans-serif;color:#171313;letter-spacing:-.07em}
+.intro-print-rule{display:flex;justify-content:space-between;align-items:end;border-top:2px solid #23171a;margin-top:12px;padding-top:10px;color:#e4c7c5;font:400 10px/1.65 'Intro Noto',sans-serif}
+.intro-print-rule b{font:36px/1 'Anton',sans-serif;color:#171313}
+.intro-paper-fallback{z-index:2;background:#903039;color:#171313;transform:rotate(-1.2deg);transform-origin:50% 0;display:flex;flex-direction:column;padding:30px 22px}
+.intro-paper-fallback>span{font:7px/1 monospace;letter-spacing:.1em}.intro-paper-fallback>strong{font:400 40cqw/1.1 'Intro Black',sans-serif;letter-spacing:-.09em;margin:36px 0 5px}.intro-paper-fallback>b{font:400 15.5cqw/1 'Anton',sans-serif;letter-spacing:-.03em}.intro-paper-fallback>small{font:400 11px/1.4 'Intro Noto',sans-serif;border-top:2px solid #1a1515;padding-top:16px;margin-top:auto}
+#intro-paper-canvas{position:absolute;inset:-10% -12%;width:124%;height:120%;pointer-events:none;z-index:3;display:none}
+.intro-torn-stub{position:absolute;top:21px;left:6px;right:6px;height:13px;background:#903039;z-index:4;clip-path:polygon(0 0,100% 0,100% 52%,97% 80%,93% 55%,89% 91%,85% 57%,81% 76%,77% 50%,73% 87%,69% 60%,65% 82%,61% 52%,57% 92%,53% 61%,49% 78%,45% 56%,41% 91%,37% 55%,33% 86%,29% 57%,25% 91%,21% 55%,17% 78%,13% 53%,9% 89%,5% 61%,0 85%);opacity:0}
+.band-intro.paper-ready #intro-paper-canvas{display:block}.band-intro.paper-ready .intro-paper-fallback{visibility:hidden}.band-intro.paper-open .intro-torn-stub{opacity:1}.band-intro.paper-open:not(.paper-ready) .intro-paper-fallback{display:none}
+.intro-stage-caption{display:flex;justify-content:space-between;align-items:center;gap:6px;min-height:45px;margin:2px -4px 29px;color:#b7a3a2;font:400 9px/1.6 'Intro Noto',sans-serif}
+#intro-replay{font:inherit;font-size:9px;padding:12px 0 12px 10px;min-height:44px;color:#e5cecb;background:transparent;border:0;text-decoration:underline;text-underline-offset:4px;cursor:pointer;white-space:nowrap}#intro-replay[hidden]{display:none}
+#intro-replay:focus-visible{outline:2px solid #c6898e;outline-offset:3px}
+.intro-meanings{border-top:2px solid #903039}.intro-meaning{padding:25px 0 29px;border-bottom:1px solid #543136;position:relative}
+.intro-meaning-label{display:flex;align-items:center;justify-content:space-between;font:9px/1.5 monospace;letter-spacing:.15em;color:#ca8e94;margin-bottom:13px}.intro-meaning-label i{font:18px/1 sans-serif;font-style:normal}
+.intro-meaning h3{margin:0 0 17px;font:400 27px/1.3 'Intro Black',sans-serif;letter-spacing:-.04em;color:#b1646b}.intro-meaning h3 em{font-style:normal;color:#eee7df}
+.intro-meaning p{font:400 13px/1.95 'Intro Noto',sans-serif;letter-spacing:-.025em;color:#cfbebb;margin:0;word-break:keep-all}.intro-meaning p+p{margin-top:12px}
+.intro-signoff{position:relative;padding-top:30px}.intro-signoff p{font:400 18px/1.6 'Intro Black',sans-serif;letter-spacing:-.03em;margin:0 0 18px}.intro-signoff>span{display:block;font:400 26vw/.95 'Anton',Impact,sans-serif;font-size:100px;letter-spacing:-.025em;color:#903039}.intro-signoff small{display:block;font:400 10px/1.6 'Intro Noto',sans-serif;color:#b3a09f;margin-top:14px}
+.motion-still #intro-paper-canvas{display:none!important}.motion-still .intro-paper-fallback{display:none!important}.motion-still .intro-torn-stub{opacity:1}.motion-still #intro-replay{display:none}
+@media(max-width:350px){.band-intro{padding:43px 17px 30px}.intro-eyebrow{font-size:6.5px}#band-intro-heading>span:last-child{font-size:10px}.intro-meaning h3{font-size:24px}.intro-meaning p{font-size:12px}.intro-signoff>span{font-size:84px}.intro-stage-caption{font-size:8px}#intro-replay{font-size:8px}.intro-print-rule{font-size:9px}.intro-revealed-print,.intro-paper-fallback{padding-left:20px;padding-right:20px}}
+@media(prefers-reduced-motion:reduce){#intro-paper-canvas,.intro-paper-fallback,#intro-replay{display:none!important}.intro-torn-stub{opacity:1}}
+@media print{#intro-paper-canvas,.intro-paper-fallback,#intro-replay{display:none!important}.intro-torn-stub{opacity:1}}

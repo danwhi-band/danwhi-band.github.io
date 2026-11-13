@@ -1,0 +1,16 @@
+.analytics-consent{margin:24px 26px 32px;border-block:1px solid #684348;color:#cabdb4;font-size:12px;line-height:1.75;overflow-wrap:anywhere}
+.analytics-consent details>summary{cursor:pointer;list-style:none;min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#f2ebdb;font-weight:700}
+.analytics-consent details>summary::-webkit-details-marker{display:none}.analytics-consent details>summary:focus-visible,.analytics-consent button:focus-visible{outline:2px solid #f2ebdb;outline-offset:4px}
+.analytics-consent-body{padding:0 0 18px}.analytics-consent-body p{margin:0 0 12px}.analytics-consent-body strong{font-weight:700;color:#f2ebdb}.analytics-privacy-note{font-size:11px;color:#b6a3a1}
+.analytics-choice{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 12px}.analytics-choice button{flex:1 1 125px;min-height:46px;padding:10px 12px;border:1px solid #80565b;color:#f2ebdb;background:transparent;font:inherit;font-weight:700;cursor:pointer}.analytics-choice #analytics-allow{background:#903039}.analytics-choice button:disabled{opacity:.55;cursor:not-allowed}
+#analytics-status{font-size:11px;min-height:20px;margin:0;color:#d4b4af}.analytics-privacy-details{margin-top:10px;border-top:1px solid #403033}.analytics-consent .analytics-privacy-details>summary{min-height:42px;font-size:11px;font-weight:400;color:#bba9a5}.analytics-privacy-details p{font-size:10px;color:#a79492}
+@media(max-width:350px){.analytics-consent{margin-inline:20px}.analytics-choice button{flex-basis:100px}}
+/* Quiet, reachable footer settings. Consent logic and collection are unchanged. */
+.footer{flex-wrap:wrap;row-gap:14px}
+.footer>.analytics-consent{flex:0 0 100%;min-width:0;margin:0;border-block:0;border-top:1px solid #393131;padding-top:2px;font-size:12px;line-height:1.75}
+.footer .analytics-consent #analytics-settings>summary{min-height:44px;font-size:10px;font-weight:400;letter-spacing:0;color:#b7aaa2}
+.footer .analytics-consent #analytics-settings[open]>summary{color:#f0e7d9}
+.footer .analytics-consent #analytics-settings>summary>span:last-child{font-size:15px;transition:transform .18s ease}
+.footer .analytics-consent #analytics-settings[open]>summary>span:last-child{transform:rotate(45deg)}
+.footer .analytics-consent-body{padding:4px 0 0}.footer .analytics-privacy-details p{font-size:11px}
+@media(prefers-reduced-motion:reduce){.footer .analytics-consent #analytics-settings>summary>span:last-child{transition:none}}
